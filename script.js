@@ -1,5 +1,5 @@
 
-
+// Creating H1 and P  elements 
 const division = document.createElement("div")
 const div1 = document.createElement("div")
 division.append(div1)
@@ -7,7 +7,6 @@ div1.setAttribute("class","div1")
 const h1 = document.createElement("h1")
 h1.setAttribute("id","title")
 h1.innerText="Calculator"
-
 div1.append(h1)
 const para = document.createElement("p")
 para.innerText= "Calculator created by DOM"
@@ -27,7 +26,7 @@ calculator.setAttribute("class","calculator")
 input.setAttribute("type","text")
 input.setAttribute("placeholder","0")
 input.setAttribute("id","result")
-
+// Creating Buttons using DOM
 const btncl = document.createElement("button")
 btncl.setAttribute("class","cl")
 btncl.setAttribute("id","clear")
@@ -162,6 +161,7 @@ btnequal.setAttribute("id","equal")
 btnequal.innerText="="
 calculator.append(btnequal)
 
+// Display numbers using input display function
 const buttons = document.querySelectorAll(".button");
 buttons.forEach((button) =>
   button.addEventListener("click", () => inputDisplay(button.textContent))
@@ -169,7 +169,7 @@ buttons.forEach((button) =>
 function inputDisplay(num) {
   input.value += num;
 }
-
+// Show only number function
 const equal = document.querySelector(".equal");
 equal.addEventListener("click", process);
 function process() {
@@ -180,12 +180,14 @@ function process() {
   }
 }
 
+// Clear Function
 const clear = document.querySelector(".cl");
 clear.addEventListener("click",clearfuction);
 function clearfuction(){
     input.value = "";
 }
 
+// Delete Function 
 const del = document.querySelector("#delete");
 del.addEventListener("click", deleteFunction);
 function deleteFunction() {
